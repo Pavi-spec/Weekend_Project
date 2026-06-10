@@ -1,0 +1,46 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='apidata'}"/>
+
+<sly data-sly-use.model="com.weekend.core.models.ApiData"/>
+
+<div class="api-container">
+
+    <!-- Section Title (Dialog value) -->
+    <h2>${model.sectionTitle}</h2>
+
+    <!-- DEBUG: Total Users -->
+    <p data-sly-test="${model.users}">
+        <b>Total Users:</b> ${model.users.size}
+    </p>
+
+    <!-- If data exists -->
+    <sly data-sly-test="${model.users}">
+
+        <div class="user-grid" data-sly-list.user="${model.users}">
+
+            <div class="user-card">
+
+                <h3>${user.name}</h3>
+
+                <p>
+                    <b>Email:</b> ${user.email}
+                </p>
+
+                <p>
+                    <b>Phone:</b> ${user.phone}
+                </p>
+
+            </div>
+
+        </div>
+
+    </sly>
+
+    <!-- If NO data -->
+    <sly data-sly-test="${!model.users}">
+        <p style="color:red;">
+            No API data available from model.
+        </p>
+    </sly>
+
+</div>

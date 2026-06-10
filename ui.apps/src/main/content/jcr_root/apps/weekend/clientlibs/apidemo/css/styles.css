@@ -1,0 +1,32 @@
+.api-container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.api-container h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.user-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.user-card {
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-card h3 {
+    margin: 0;
+    color: #1a73e8;
+}
+
+.user-card p {
+    margin: 5px 0;
+}

@@ -1,0 +1,60 @@
+<sly data-sly-use.clientlib=
+             "/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call=
+             "${clientlib.css @ categories='busreservation'}"/>
+
+<sly data-sly-call=
+             "${clientlib.js @ categories='busreservation'}"/>
+
+<div class="bus-card">
+
+    <img src="${properties.image}"
+         alt="${properties.title}" />
+
+    <h2>${properties.title}</h2>
+
+    <p>${properties.description}</p>
+
+    <p>
+        <strong>From:</strong>
+        ${properties.from}
+    </p>
+
+    <p>
+        <strong>To:</strong>
+        ${properties.to}
+    </p>
+
+    <p>
+        <strong>Date:</strong>
+
+        ${'dd-MM-yyyy' @ format=properties.date.time}
+    </p>
+
+    <p>
+        <strong>Price:</strong>
+
+        ₹${properties.price}
+    </p>
+
+    <p>
+        <strong>Seats:</strong>
+
+        ${properties.seats}
+    </p>
+
+    <p>
+        <strong>AC:</strong>
+
+        ${properties.ac ? 'Yes' : 'No'}
+    </p>
+
+    <a class="book-btn"
+       href="${properties.buttonLink}">
+
+        ${properties.buttonText}
+
+    </a>
+
+</div>

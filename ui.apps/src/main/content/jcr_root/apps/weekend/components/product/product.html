@@ -1,0 +1,12 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.css @ categories='weekend.product'}"/>
+<sly data-sly-call="${clientlib.js @ categories='weekend.product'}"/>
+
+<div class="product-box">
+    <h1>${properties.productName}</h1>
+    <h3>₹ ${properties.price}</h3>
+    <p>${properties.description}</p>
+
+    <button class="buy-btn">Buy Now</button>
+</div>

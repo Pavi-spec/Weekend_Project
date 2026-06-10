@@ -1,0 +1,22 @@
+.bgColor{
+    background: yellow;
+    color: red;
+    padding:10px;
+}
+
+.extra-box{
+    background: lightblue;
+    padding:20px;
+}
+
+.redBox{
+    background:black;
+    color:white;
+    padding:20px;
+}
+
+.product-box{
+    background: lightgray;
+    padding:20px;
+    margin-top:20px;
+}

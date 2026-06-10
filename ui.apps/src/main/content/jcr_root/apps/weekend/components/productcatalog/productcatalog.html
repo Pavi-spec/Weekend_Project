@@ -1,0 +1,24 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='productcatalog'}"/>
+
+<sly data-sly-use.model="com.weekend.core.models.ProductCatalogModel"/>
+
+<h2 class="title">Product Catalog</h2>
+
+<div class="product-container">
+
+    <div data-sly-list.product="${model.products}" class="product-card">
+
+        <!-- Product Title -->
+        <h3 class="product-title">
+            ${product.productName}
+        </h3>
+
+        <!-- 3 fields like your screenshot -->
+        <p><strong>Price:</strong> ₹${product.price}</p>
+
+        <p><strong>Category:</strong> ${product.category}</p>
+
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+<sly data-sly-use.model="com.weekend.core.models.CompanyModel"/>
+
+<!-- Employees -->
+
+<h1>Employees</h1>
+
+<div data-sly-list.emp="${model.employees}">
+
+    <h2>${emp.name}</h2>
+
+    <p>${emp.role}</p>
+
+</div>
+
+<!-- Projects -->
+
+<h1>Projects</h1>
+
+<div data-sly-list.project="${model.projects}">
+
+    <h2>${project.projectName}</h2>
+
+    <p>${project.technology}</p>
+
+</div>
+
+<!-- Address -->
+
+<h1>Address</h1>
+
+<h3>${model.address.city}</h3>
+
+<h3>${model.address.country}</h3>

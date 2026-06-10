@@ -1,0 +1,21 @@
+.api-component {
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.api-component h2 {
+    margin-bottom: 20px;
+}
+
+.user-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.user-card h3 {
+    margin-top: 0;
+    color: #0d6efd;
+}

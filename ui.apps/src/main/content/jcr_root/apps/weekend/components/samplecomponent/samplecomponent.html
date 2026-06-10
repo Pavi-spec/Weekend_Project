@@ -1,0 +1,99 @@
+<h1 class="bgColor">
+    ${properties.textSample}
+</h1>
+
+<p>${properties.description}</p>
+
+
+<div data-sly-test="${properties.showDescription}">
+    Description Visible
+</div>
+
+<div data-sly-test="${!properties.showDescription}">
+    Description Hidden
+</div>
+
+
+
+<sly data-sly-test.isBatman="${properties.userType == 'batman'}"/>
+<sly data-sly-test.isSuperman="${properties.userType == 'superman'}"/>
+<sly data-sly-test.isSpiderman="${properties.userType == 'spiderman'}"/>
+
+<div data-sly-test="${isBatman}">
+    Welcome Batman
+</div>
+
+<div data-sly-test="${isSuperman}">
+    Welcome Superman
+</div>
+
+<div data-sly-test="${isSpiderman}">
+    Welcome Spiderman
+</div>
+
+
+
+<div data-sly-list.item="${properties.articles}">
+    <p>${item}</p>
+</div>
+
+
+
+<div data-sly-repeat.item="${properties.articles}">
+    <h4>${item}</h4>
+</div>
+
+
+
+<h1 data-sly-element="${properties.headingType}">
+    Dynamic Heading
+</h1>
+
+
+
+<div data-sly-attribute.class="${properties.cssClass}">
+    Dynamic CSS Class
+</div>
+
+
+
+<a data-sly-attribute.href="${properties.link}">
+    ${properties.buttonLabel}
+</a>
+
+
+
+<div data-sly-unwrap="${properties.removeWrapper}">
+    <h3>Wrapper Removed Example</h3>
+</div>
+
+
+
+<sly data-sly-set.message="Learning AEM HTL"/>
+<h2>${message}</h2>
+
+
+
+<sly data-sly-include="extra.html"/>
+
+
+
+<template data-sly-template.productTemplate="${@ name, price}">
+    <div class="product-box">
+        <h2>${name}</h2>
+        <p>${price}</p>
+    </div>
+</template>
+
+<sly data-sly-call="${productTemplate @
+name='Laptop',
+price='₹50000'}"/>
+
+
+
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.css @ categories='weekend.sample'}"/>
+
+<sly data-sly-call="${clientlib.js @ categories='weekend.sample'}"/>
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Sample Dialog"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+
+            <textSample
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Text"
+                    name="./textSample"/>
+
+
+            <description
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                    fieldLabel="Description"
+                    name="./description"/>
+
+
+            <link
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Link"
+                    name="./link"/>
+
+
+            <buttonLabel
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Button Label"
+                    name="./buttonLabel"/>
+
+
+            <cssClass
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="CSS Class"
+                    name="./cssClass"/>
+
+
+            <showDescription
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                    text="Show Description"
+                    name="./showDescription"
+                    value="true"
+                    uncheckedValue="false"/>
+
+
+            <removeWrapper
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                    text="Remove Wrapper"
+                    name="./removeWrapper"
+                    value="true"
+                    uncheckedValue="false"/>
+
+
+            <headingType
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                    fieldLabel="Heading Type"
+                    name="./headingType">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="H1"
+                            value="h1"/>
+
+                    <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="H2"
+                            value="h2"/>
+
+                    <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="H3"
+                            value="h3"/>
+
+                </items>
+            </headingType>
+
+
+            <userType
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                    fieldLabel="Hero Type"
+                    name="./userType">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <batman
+                            jcr:primaryType="nt:unstructured"
+                            text="Batman"
+                            value="batman"/>
+
+                    <superman
+                            jcr:primaryType="nt:unstructured"
+                            text="Superman"
+                            value="superman"/>
+
+                    <spiderman
+                            jcr:primaryType="nt:unstructured"
+                            text="Spiderman"
+                            value="spiderman"/>
+
+                </items>
+            </userType>
+
+
+            <articles
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                    fieldLabel="Articles">
+
+                <field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        name="./articles"/>
+            </articles>
+
+        </items>
+    </content>
+</jcr:root>

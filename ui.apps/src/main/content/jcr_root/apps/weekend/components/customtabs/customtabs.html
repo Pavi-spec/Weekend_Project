@@ -1,0 +1,50 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='weekend.customtabs'}"/>
+<h1>Tabs Switching Model</h1>
+
+<div class="custom-tabs"
+     data-sly-use.model="com.weekend.core.models.CustomTabsModel"
+     data-sly-test="${model.tabs}">
+
+    <!-- TAB BUTTONS -->
+    <div class="tab-buttons">
+
+        <sly data-sly-list.tab="${model.tabs}">
+
+            <button
+                    class="tab-button ${tabList.first ? 'active' : ''}"
+                    data-tab="${tabList.index}">
+
+                ${tab.title}
+
+            </button>
+
+        </sly>
+
+    </div>
+
+    <!-- TAB CONTENTS -->
+    <div class="tab-contents">
+
+        <sly data-sly-list.tab="${model.tabs}">
+
+            <div
+                    class="tab-content ${tabList.first ? 'active' : ''}"
+                    data-content="${tabList.index}">
+
+                ${tab.content @ context='html'}
+
+            </div>
+
+        </sly>
+
+    </div>
+
+</div>
+
+<!-- Placeholder in author mode -->
+<sly data-sly-test="${!model.tabs}">
+    <div class="cq-placeholder"
+         data-emptytext="Custom Tabs Component">
+    </div>
+</sly>

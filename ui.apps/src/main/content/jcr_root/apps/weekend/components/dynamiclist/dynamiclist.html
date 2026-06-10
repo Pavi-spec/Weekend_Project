@@ -1,0 +1,19 @@
+<sly data-sly-use.model="com.weekend.core.models.DynamicListModel">
+
+    <div data-sly-list.page="${model.childPages}">
+
+        <div style="border:1px solid gray; padding:10px; margin:10px;">
+
+            <h2>${page.title}</h2>
+
+            <p>${page.description}</p>
+
+            <a href="${page.path}.html">
+                Open Page Details
+            </a>
+
+        </div>
+
+    </div>
+
+</sly>

@@ -1,0 +1,20 @@
+<div class="multi-banner-wrapper">
+
+    <div class="banner-wrapper"
+         data-sly-list.item="${resource.getChild['bannerItems'].children}">
+
+        <div class="banner-card">
+
+            <h2>${item.title}</h2>
+
+            <img src="${item.image}"
+                 alt="${item.title}"
+                 style="width:300px;height:200px;object-fit:cover;" />
+
+            <p>${item.description}</p>
+
+        </div>
+
+    </div>
+
+</div>
