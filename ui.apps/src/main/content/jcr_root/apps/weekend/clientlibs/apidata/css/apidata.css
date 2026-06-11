@@ -1,21 +1,59 @@
 .api-component {
-    margin: 20px 0;
+    margin: 30px auto;
+    padding: 20px;
     font-family: Arial, sans-serif;
+    max-width: 1200px;
 }
 
-.api-component h2 {
-    margin-bottom: 20px;
+.main-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 32px;
+}
+
+#userContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
 }
 
 .user-card {
-    border: 1px solid #ddd;
-    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-card h2 {
+    margin-top: 0;
+    color: #0d6efd;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 8px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
 }
 
 .user-card h3 {
-    margin-top: 0;
-    color: #0d6efd;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #198754;
+    border-left: 4px solid #198754;
+    padding-left: 8px;
+}
+
+.user-card p {
+    margin: 6px 0;
+    line-height: 1.6;
+    color: #444;
+}
+
+.user-card strong {
+    color: #222;
 }

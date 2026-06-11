@@ -14,14 +14,7 @@ public class ApiDataModel {
     @ValueMapValue
     private String title;
 
-    @ValueMapValue
-    private String topic;
-
     public String getTitle() {
         return title;
-    }
-
-    public String getTopic() {
-        return topic;
     }
 }

@@ -19,13 +19,6 @@
                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                     fieldLabel="Section Title"
                     name="./title"/>
-
-            <topic
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                    fieldLabel="Topic"
-                    name="./topic"/>
-
         </items>
 
     </content>

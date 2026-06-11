@@ -5,20 +5,19 @@
 .api-component h2 {
     text-align: center;
     margin-bottom: 25px;
+    font-size: 32px;
 }
 
-/* Container Grid */
 .products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
 }
 
-/* Product Card */
 .user-card {
     border: 1px solid #ddd;
     border-radius: 12px;
-    padding: 15px;
+    padding: 18px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: 0.3s;
@@ -30,16 +29,27 @@
 
 .user-card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .user-card p {
     margin: 8px 0;
-    word-break: break-word;
+    line-height: 1.5;
 }
 
 .user-card b {
     color: #0d6efd;
+}
+
+.description {
+    color: #555;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.rating {
+    color: #ff9800;
+    font-weight: bold;
 }
