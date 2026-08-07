@@ -5,7 +5,7 @@ import org.osgi.service.component.annotations.Component;
 @Component(
         service = MessageService.class,
         property = {
-                "service.ranking:Integer=50"
+                "service.ranking:Integer=2"
         }
 )
 public class MessageServiceImpl implements MessageService {

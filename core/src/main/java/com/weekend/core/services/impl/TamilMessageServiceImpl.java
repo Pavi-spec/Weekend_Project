@@ -7,7 +7,7 @@ import org.osgi.service.component.annotations.Component;
 @Component(
         service = MessageService.class,
         property = {
-                "service.ranking:Integer=1"
+                "service.ranking:Integer=3"
         }
 )
 
