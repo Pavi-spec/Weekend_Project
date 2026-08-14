@@ -1,0 +1,281 @@
+<sly
+        data-sly-use.model="com.weekend.core.models.ChapterCardsModel"
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+
+
+    <!-- =========================================================
+         CHAPTER CARDS CLIENT LIBRARY - CSS
+         ========================================================= -->
+
+    <sly
+            data-sly-call="${clientlib.css @ categories='clientlib_chaptercard'}">
+    </sly>
+
+
+    <!-- =========================================================
+         MAIN CHAPTER CARDS COMPONENT
+         ========================================================= -->
+
+    <section
+            class="chapter-cards"
+            style="${model.styleString @ context='styleString'}"
+            data-chapter-cards>
+
+
+        <!-- =====================================================
+             CHAPTER HEADER
+             ===================================================== -->
+
+        <header class="chapter-cards__header">
+
+
+            <!-- CHAPTER TITLE -->
+
+            <h2
+                    class="chapter-cards__title"
+                    data-sly-test="${model.chapterTitle}">
+
+                ${model.chapterTitle}
+
+            </h2>
+
+
+            <!-- CHAPTER DESCRIPTION -->
+
+            <p
+                    class="chapter-cards__description"
+                    data-sly-test="${model.hasDescription}">
+
+                ${model.chapterDescription}
+
+            </p>
+
+        </header>
+
+
+        <!-- =====================================================
+             TOPIC CARDS GRID
+             ===================================================== -->
+
+        <div
+                class="chapter-cards__grid"
+                data-sly-test="${model.hasTopics}">
+
+
+            <!-- =================================================
+                 TOPIC CARD
+                 ================================================= -->
+
+            <article
+                    class="chapter-card"
+                    data-sly-repeat.topic="${model.topics}">
+
+
+                <!-- =============================================
+                     TOPIC LINK
+                     ============================================= -->
+
+                <a
+                        class="chapter-card__link"
+                        href="${topic.pagePath}"
+                        target="${topic.openInNewTab ? '_blank' : '_self'}"
+                        rel="${topic.openInNewTab ? 'noopener noreferrer' : ''}"
+                        aria-label="${topic.title}">
+
+
+                    <!-- =========================================
+                         TOPIC IMAGE
+                         ========================================= -->
+
+                    <div
+                            class="chapter-card__image-wrapper"
+                            data-sly-test="${topic.hasImage}">
+
+                        <img
+                                class="chapter-card__image"
+                                src="${topic.image}"
+                                alt="${topic.title}"
+                                loading="lazy"/>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         CONTENT
+                         ========================================= -->
+
+                    <div class="chapter-card__content">
+
+
+                        <!-- TOPIC TITLE -->
+
+                        <h3
+                                class="chapter-card__title"
+                                data-sly-test="${topic.title}">
+
+                            ${topic.title}
+
+                        </h3>
+
+
+                        <!-- TOPIC DESCRIPTION -->
+
+                        <p
+                                class="chapter-card__description"
+                                data-sly-test="${topic.hasDescription}">
+
+                            ${topic.description}
+
+                        </p>
+
+
+                        <!-- LEARN MORE -->
+
+                        <span
+                                class="chapter-card__learn-more"
+                                aria-hidden="true">
+
+                            <span>
+                                Learn More
+                            </span>
+
+                            <span
+                                    class="chapter-card__learn-arrow">
+
+                                →
+
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </article>
+
+
+            <!-- =================================================
+                 MORE CARD
+                 ================================================= -->
+
+            <article
+                    class="chapter-card chapter-card--more"
+                    data-sly-test="${model.hasMoreCard}">
+
+
+                <a
+                        class="chapter-card__link"
+                        href="${model.moreCard.pagePath}"
+                        aria-label="${model.moreCard.text}">
+
+
+                    <div class="chapter-card__more-content">
+
+
+                        <!-- =====================================
+                             MORE ICON FROM DAM
+                             ===================================== -->
+
+                        <div
+                                class="chapter-card__icon-wrapper"
+                                data-sly-test="${model.moreCard.hasIcon}">
+
+                            <img
+                                    class="chapter-card__more-icon"
+                                    src="${model.moreCard.icon}"
+                                    alt=""
+                                    aria-hidden="true"/>
+
+                        </div>
+
+
+                        <!-- =====================================
+                             DEFAULT ARROW
+                             ===================================== -->
+
+                        <div
+                                class="chapter-card__default-icon"
+                                data-sly-test="${!model.moreCard.hasIcon}"
+                                aria-hidden="true">
+
+                            →
+
+                        </div>
+
+
+                        <!-- =====================================
+                             MORE TEXT
+                             ===================================== -->
+
+                        <span
+                                class="chapter-card__more-text">
+
+                            ${model.moreCard.text}
+
+                        </span>
+
+
+                        <!-- =====================================
+                             MORE SUBTEXT
+                             ===================================== -->
+
+                        <span
+                                class="chapter-card__more-subtext">
+
+                            Explore all topics
+
+                        </span>
+
+
+                        <!-- =====================================
+                             MORE ARROW
+                             ===================================== -->
+
+                        <span
+                                class="chapter-card__arrow"
+                                aria-hidden="true">
+
+                            →
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <!-- =====================================================
+             EMPTY STATE
+             ===================================================== -->
+
+        <div
+                class="chapter-cards__empty"
+                data-sly-test="${!model.hasTopics}">
+
+            <div class="chapter-cards__empty-icon">
+                📚
+            </div>
+
+            <p>
+                No topics have been configured for this chapter.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CHAPTER CARDS CLIENT LIBRARY - JS
+         ========================================================= -->
+
+    <sly
+            data-sly-call="${clientlib.js @ categories='clientlib_chaptercard'}">
+    </sly>
+
+</sly>

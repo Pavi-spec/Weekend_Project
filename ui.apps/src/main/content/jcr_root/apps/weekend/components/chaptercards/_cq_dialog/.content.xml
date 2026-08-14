@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Chapter Cards"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- =====================================================
+                 TABS
+                 ===================================================== -->
+
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs">
+
+                <items jcr:primaryType="nt:unstructured">
+
+
+                    <!-- =================================================
+                         GENERAL TAB
+                         ================================================= -->
+
+                    <general
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="General"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+
+                            <!-- CHAPTER TITLE -->
+
+                            <chapterTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Chapter Title"
+                                    fieldDescription="Enter the title of the learning chapter."
+                                    name="./chapterTitle"
+                                    required="{Boolean}true"/>
+
+
+                            <!-- CHAPTER DESCRIPTION -->
+
+                            <chapterDescription
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Chapter Description"
+                                    fieldDescription="Optional description displayed below the chapter title."
+                                    name="./chapterDescription"/>
+
+                        </items>
+
+                    </general>
+
+
+                    <!-- =================================================
+                         TOPIC CARDS TAB
+                         ================================================= -->
+
+                    <topics
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Topic Cards"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+
+                            <!-- TOPIC MULTIFIELD -->
+
+                            <topicCards
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldLabel="Topic Cards"
+                                    fieldDescription="Add, remove, and reorder learning topics.">
+
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        name="./topics">
+
+                                    <items jcr:primaryType="nt:unstructured">
+
+
+                                        <!-- TOPIC IMAGE -->
+
+                                        <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Topic Image"
+                                                fieldDescription="Select an image from DAM."
+                                                name="./image"
+                                                rootPath="/content/dam"
+                                                required="{Boolean}true"/>
+
+
+                                        <!-- TOPIC TITLE -->
+
+                                        <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Topic Title"
+                                                fieldDescription="Enter the topic title."
+                                                name="./title"
+                                                required="{Boolean}true"/>
+
+
+                                        <!-- TOPIC DESCRIPTION -->
+
+                                        <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Topic Description"
+                                                fieldDescription="Enter a short description for the topic."
+                                                name="./description"/>
+
+
+                                        <!-- TOPIC PAGE PATH -->
+
+                                        <pagePath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Topic Page Path"
+                                                fieldDescription="Select the AEM page this topic should open."
+                                                name="./pagePath"
+                                                rootPath="/content"
+                                                required="{Boolean}true"/>
+
+
+                                        <!-- OPEN IN NEW TAB -->
+
+                                        <openInNewTab
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                text="Open in New Tab"
+                                                fieldDescription="Open the topic page in a new browser tab."
+                                                name="./openInNewTab"
+                                                value="{Boolean}true"
+                                                uncheckedValue="{Boolean}false"/>
+
+                                    </items>
+
+                                </field>
+
+                            </topicCards>
+
+                        </items>
+
+                    </topics>
+
+
+                    <!-- =================================================
+                         MORE CARD TAB
+                         ================================================= -->
+
+                    <moreCard
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="More Card"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+
+                            <!-- MORE TEXT -->
+
+                            <moreText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="More Card Text"
+                                    fieldDescription="Text displayed inside the More card."
+                                    name="./moreText"
+                                    value="View All Topics"/>
+
+
+                            <!-- CHAPTER PAGE -->
+
+                            <chapterPagePath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Chapter Page Path"
+                                    fieldDescription="Select the complete chapter page."
+                                    name="./chapterPagePath"
+                                    rootPath="/content"
+                                    required="{Boolean}true"/>
+
+
+                            <!-- MORE ICON -->
+
+                            <moreIcon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="More Card Icon"
+                                    fieldDescription="Optional icon selected from DAM."
+                                    name="./moreIcon"
+                                    rootPath="/content/dam"/>
+
+                        </items>
+
+                    </moreCard>
+
+
+                    <!-- =================================================
+                         STYLE TAB
+                         ================================================= -->
+
+                    <style
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Style"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+
+                            <!-- BACKGROUND -->
+
+                            <backgroundColor
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                    fieldLabel="Background Color"
+                                    fieldDescription="Background color of the cards."
+                                    name="./backgroundColor"
+                                    value="#1F2937"/>
+
+
+                            <!-- TEXT -->
+
+                            <textColor
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                    fieldLabel="Text Color"
+                                    fieldDescription="Main title and text color."
+                                    name="./textColor"
+                                    value="#FFFFFF"/>
+
+
+                            <!-- HOVER -->
+
+                            <hoverColor
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                    fieldLabel="Hover Color"
+                                    fieldDescription="Border and highlight color when hovering over cards."
+                                    name="./hoverColor"
+                                    value="#3B82F6"/>
+
+
+                            <!-- BORDER RADIUS -->
+
+                            <borderRadius
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Border Radius"
+                                    fieldDescription="Enter the card border radius in pixels."
+                                    name="./borderRadius"
+                                    value="12"
+                                    min="0"
+                                    max="50"/>
+
+                        </items>
+
+                    </style>
+
+                </items>
+
+            </tabs>
+
+        </items>
+
+    </content>
+
+</jcr:root>

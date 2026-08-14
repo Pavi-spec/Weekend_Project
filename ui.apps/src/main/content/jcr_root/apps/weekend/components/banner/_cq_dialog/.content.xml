@@ -18,9 +18,7 @@
                 jcr:primaryType="nt:unstructured">
 
 
-            <!-- ================================================= -->
-            <!-- SELECT -->
-            <!-- ================================================= -->
+
 
             <bannerType
                     jcr:primaryType="nt:unstructured"
@@ -59,9 +57,6 @@
             </bannerType>
 
 
-            <!-- ================================================= -->
-            <!-- PRIMARY -->
-            <!-- ================================================= -->
 
             <primaryContainer
                     jcr:primaryType="nt:unstructured"
@@ -91,9 +86,6 @@
             </primaryContainer>
 
 
-            <!-- ================================================= -->
-            <!-- SECONDARY -->
-            <!-- ================================================= -->
 
             <secondaryContainer
                     jcr:primaryType="nt:unstructured"
@@ -106,7 +98,7 @@
                         jcr:primaryType="nt:unstructured">
 
 
-                    <!-- TITLE -->
+
 
                     <title
                             jcr:primaryType="nt:unstructured"
@@ -117,7 +109,7 @@
                             name="./title"/>
 
 
-                    <!-- DESCRIPTION -->
+
 
                     <description
                             jcr:primaryType="nt:unstructured"
@@ -127,8 +119,6 @@
                             fieldLabel="Description"
                             name="./description"/>
 
-
-                    <!-- IMAGE -->
 
                     <image
                             jcr:primaryType="nt:unstructured"
@@ -150,9 +140,6 @@
             </secondaryContainer>
 
 
-            <!-- ================================================= -->
-            <!-- TERTIARY -->
-            <!-- ================================================= -->
 
             <tertiaryContainer
                     jcr:primaryType="nt:unstructured"
@@ -165,7 +152,7 @@
                         jcr:primaryType="nt:unstructured">
 
 
-                    <!-- CONTACT NAME -->
+
 
                     <contactName
                             jcr:primaryType="nt:unstructured"
@@ -176,7 +163,7 @@
                             name="./contactName"/>
 
 
-                    <!-- CONTACT PHONE -->
+
 
                     <contactPhone
                             jcr:primaryType="nt:unstructured"
@@ -187,7 +174,6 @@
                             name="./contactPhone"/>
 
 
-                    <!-- CONTACT EMAIL -->
 
                     <contactEmail
                             jcr:primaryType="nt:unstructured"
@@ -198,7 +184,6 @@
                             name="./contactEmail"/>
 
 
-                    <!-- CONTACT ADDRESS -->
 
                     <contactAddress
                             jcr:primaryType="nt:unstructured"

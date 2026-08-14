@@ -6,5 +6,4 @@
         xmlns:jcr="http://www.jcp.org/jcr/1.0"
         jcr:primaryType="cq:Component"
         jcr:title="Banner"
-        extraClientlibs="[weekend.banner.dialog]"
         componentGroup="Weekend Components"/>

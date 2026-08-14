@@ -21,21 +21,21 @@
 
 
 /* =========================================================
-   NAVBAR
+   HEADER / NAVBAR
    ========================================================= */
 
 .banner-header {
     width: 100%;
-    min-height: 100px;
+    min-height: 120px;
 
     display: flex;
     align-items: center;
 
-    padding: 0 60px;
+    padding: 0 40px;
 
-    background-color: #ffffff;
+    background-color: rgb(25, 118, 210);
 
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid rgb(21, 101, 192);
 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 
@@ -44,36 +44,35 @@
 
 
 /* =========================================================
-   LOGO - LARGE
+   LOGO
    ========================================================= */
 
 .banner-logo {
-    width: 220px;
-
+    width: 270px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-
+    justify-content: center;
     flex-shrink: 0;
 }
 
-
 .banner-logo img {
-    width: 200px;
-
-    height: 80px;
-
-    max-width: none;
-    max-height: none;
-
-    object-fit: contain;
+    width: 150px;
+    height: 150px;
 
     display: block;
+
+    object-fit: cover;
+
+    border-radius: 70%;
+
+    border: 2px solid rgb(255, 255, 255);
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
 
 /* =========================================================
-   NAVIGATION
+   NAVBAR
    ========================================================= */
 
 .banner-navbar {
@@ -83,39 +82,42 @@
     align-items: center;
     justify-content: center;
 
-    gap: 40px;
+    gap: 42px;
 
-    margin-left: 30px;
+    margin-left: 20px;
 }
-
 
 .banner-navbar a {
     position: relative;
 
     padding: 10px 4px;
 
-    color: #1f2937;
+    color: rgb(255, 255, 255);
 
     text-decoration: none;
 
-    font-size: 23px;
+    font-size: 20px;
 
     font-weight: 600;
 
-    line-height: 1.5;
+    line-height: 1.4;
 
     white-space: nowrap;
 
-    transition: all 0.25s ease;
+    transition: color 0.25s ease,
+    transform 0.25s ease;
 }
 
-
 .banner-navbar a:hover {
-    color: #2563eb;
+    color: rgb(225, 245, 254);
 
     transform: translateY(-1px);
 }
 
+
+/* =========================================================
+   NAVBAR HOVER UNDERLINE
+   ========================================================= */
 
 .banner-navbar a::after {
     content: "";
@@ -128,11 +130,10 @@
     width: 0;
     height: 2px;
 
-    background-color: #2563eb;
+    background-color: rgb(255, 255, 255);
 
     transition: width 0.25s ease;
 }
-
 
 .banner-navbar a:hover::after {
     width: 100%;
@@ -140,7 +141,7 @@
 
 
 /* =========================================================
-   SEARCH
+   SEARCH AREA
    ========================================================= */
 
 .banner-search {
@@ -154,80 +155,75 @@
     flex-shrink: 0;
 }
 
-
 .banner-search input {
-    width: 220px;
+    width: 180px;
+    height: 54px;
 
-    height: 46px;
+    padding: 0 16px;
 
-    padding: 0 15px;
+    border: 1px solid rgb(203, 213, 225);
 
-    border: 1px solid #cbd5e1;
-
-    border-radius: 7px;
+    border-radius: 8px;
 
     outline: none;
 
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 
-    color: #111827;
+    color: rgb(17, 24, 39);
 
-    font-size: 15px;
+    font-size: 16px;
 
     box-sizing: border-box;
 }
 
-
 .banner-search input::placeholder {
-    color: #9ca3af;
+    color: rgb(156, 163, 175);
 }
-
 
 .banner-search input:focus {
-    border-color: #2563eb;
+    border-color: rgb(37, 99, 235);
 
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-
 .banner-search button {
-    height: 46px;
+    height: 54px;
 
-    padding: 0 18px;
+    padding: 0 22px;
 
     border: none;
 
-    border-radius: 7px;
+    border-radius: 8px;
 
-    background-color: #2563eb;
+    background-color: rgb(13, 71, 161);
 
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 
-    font-size: 15px;
+    font-size: 16px;
 
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: all 0.25s ease;
+    transition: background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-
 .banner-search button:hover {
-    background-color: #1d4ed8;
+    background-color: rgb(10, 56, 128);
 
     transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   COMMON BANNER CONTENT
+   COMMON CONTENT
    ========================================================= */
 
 .banner-content {
     width: 100%;
 
-    min-height: 550px;
+    min-height: 620px;
 
     padding: 80px 8%;
 
@@ -236,14 +232,13 @@
 
 
 /* =========================================================
-   PRIMARY
-   Only PRIMARY gets selected background color
+   PRIMARY CONTENT
    ========================================================= */
 
 .primary-content {
     width: 100%;
 
-    min-height: 550px;
+    min-height: 620px;
 
     display: flex;
 
@@ -263,46 +258,54 @@
 }
 
 
+/* =========================================================
+   PRIMARY TITLE
+   ========================================================= */
+
 .primary-content h1 {
-    max-width: 950px;
+    max-width: 1100px;
 
-    margin: 0 0 25px;
+    margin: 0 0 30px;
 
-    color: #ffffff;
+    color: rgb(20, 43, 100);
 
     font-size: 60px;
 
     font-weight: 700;
 
-    line-height: 1.15;
+    line-height: 1.2;
 
     letter-spacing: -1px;
 }
 
 
+/* =========================================================
+   PRIMARY DESCRIPTION
+   ========================================================= */
+
 .primary-content p {
-    max-width: 800px;
+    max-width: 900px;
 
     margin: 0;
 
-    color: #ffffff;
+    color: rgb(91, 52, 145);
 
     font-size: 21px;
 
-    font-weight: 400;
+    font-weight: 500;
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   SECONDARY
+   SECONDARY CONTENT
    ========================================================= */
 
 .secondary-content {
     width: 100%;
 
-    min-height: 550px;
+    min-height: 620px;
 
     display: flex;
 
@@ -314,7 +317,7 @@
 
     padding: 80px 8%;
 
-    background-color: #f8fafc;
+    background-color: rgb(248, 250, 252);
 
     box-sizing: border-box;
 }
@@ -330,11 +333,10 @@
     max-width: 650px;
 }
 
-
 .secondary-text h1 {
     margin: 0 0 25px;
 
-    color: #111827;
+    color: rgb(17, 24, 39);
 
     font-size: 52px;
 
@@ -343,11 +345,10 @@
     line-height: 1.2;
 }
 
-
 .secondary-text p {
     margin: 0;
 
-    color: #4b5563;
+    color: rgb(75, 85, 99);
 
     font-size: 20px;
 
@@ -369,7 +370,6 @@
     justify-content: center;
 }
 
-
 .secondary-image img {
     width: 100%;
 
@@ -388,28 +388,27 @@
 
 
 /* =========================================================
-   TERTIARY
+   TERTIARY CONTENT
    ========================================================= */
 
 .tertiary-content {
     width: 100%;
 
-    min-height: 550px;
+    min-height: 620px;
 
     padding: 80px 8%;
 
-    background-color: #f8fafc;
+    background-color: rgb(248, 250, 252);
 
     text-align: center;
 
     box-sizing: border-box;
 }
 
-
 .tertiary-content h1 {
     margin: 0 0 40px;
 
-    color: #111827;
+    color: rgb(17, 24, 39);
 
     font-size: 52px;
 
@@ -432,7 +431,7 @@
 
     padding: 35px 45px;
 
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 
     border-radius: 14px;
 
@@ -441,33 +440,30 @@
     text-align: left;
 }
 
-
 .contact-details p {
     margin: 0;
 
     padding: 18px 0;
 
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid rgb(229, 231, 235);
 
-    color: #374151;
+    color: rgb(55, 65, 81);
 
     font-size: 18px;
 
     line-height: 1.6;
 }
 
-
 .contact-details p:last-child {
     border-bottom: none;
 }
-
 
 .contact-details strong {
     display: inline-block;
 
     min-width: 140px;
 
-    color: #111827;
+    color: rgb(17, 24, 39);
 
     font-weight: 700;
 }
@@ -475,7 +471,6 @@
 
 /* =========================================================
    FOOTER
-   Always BLACK
    ========================================================= */
 
 .banner-footer {
@@ -491,20 +486,19 @@
 
     padding: 30px 60px;
 
-    background-color: #000000;
+    background-color: rgb(0, 0, 0);
 
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 
     text-align: center;
 
     box-sizing: border-box;
 }
 
-
 .banner-footer p {
     margin: 0;
 
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 
     font-size: 16px;
 
@@ -519,45 +513,40 @@
 @media (min-width: 1600px) {
 
     .banner-header {
-        min-height: 115px;
+        min-height: 125px;
 
-        padding: 0 80px;
+        padding: 0 60px;
     }
-
 
     .banner-logo {
         width: 250px;
     }
 
-
     .banner-logo img {
-        width: 230px;
-
-        height: 90px;
+        width: 105px;
+        height: 105px;
     }
-
 
     .banner-navbar {
-        gap: 45px;
+        gap: 48px;
     }
-
 
     .banner-navbar a {
-        font-size: 19px;
+        font-size: 21px;
     }
 
+    .banner-search {
+        margin-left: 35px;
+    }
 
     .banner-search input {
-        width: 250px;
-
-        height: 50px;
+        width: 200px;
+        height: 56px;
     }
-
 
     .banner-search button {
-        height: 50px;
+        height: 56px;
     }
-
 
     .primary-content,
     .secondary-content,
@@ -565,16 +554,13 @@
         min-height: 650px;
     }
 
-
     .primary-content h1 {
-        font-size: 70px;
+        font-size: 68px;
     }
-
 
     .primary-content p {
-        font-size: 24px;
+        font-size: 23px;
     }
-
 }
 
 
@@ -585,43 +571,39 @@
 @media (max-width: 1200px) {
 
     .banner-header {
-        padding: 0 35px;
+        padding: 0 30px;
     }
-
 
     .banner-logo {
-        width: 180px;
+        width: 190px;
     }
-
 
     .banner-logo img {
-        width: 165px;
-
-        height: 70px;
+        width: 90px;
+        height: 90px;
     }
-
 
     .banner-navbar {
-        gap: 24px;
+        gap: 28px;
 
-        margin-left: 15px;
+        margin-left: 10px;
     }
-
 
     .banner-navbar a {
-        font-size: 16px;
+        font-size: 18px;
     }
-
 
     .banner-search {
-        margin-left: 15px;
+        margin-left: 20px;
     }
-
 
     .banner-search input {
-        width: 160px;
+        width: 150px;
     }
 
+    .banner-search button {
+        padding: 0 16px;
+    }
 
     .secondary-content {
         gap: 45px;
@@ -629,21 +611,17 @@
         padding: 70px 6%;
     }
 
-
     .secondary-text h1 {
         font-size: 44px;
     }
-
 
     .secondary-text p {
         font-size: 18px;
     }
 
-
     .secondary-image img {
         height: 340px;
     }
-
 }
 
 
@@ -654,35 +632,29 @@
 @media (max-width: 900px) {
 
     .banner-header {
-        min-height: 90px;
+        min-height: 100px;
 
-        padding: 15px 25px;
+        padding: 15px 20px;
     }
-
 
     .banner-logo {
-        width: 140px;
+        width: 150px;
     }
-
 
     .banner-logo img {
-        width: 130px;
-
-        height: 60px;
+        width: 80px;
+        height: 80px;
     }
-
 
     .banner-navbar {
-        gap: 14px;
+        gap: 18px;
 
-        margin-left: 10px;
+        margin-left: 5px;
     }
-
 
     .banner-navbar a {
-        font-size: 14px;
+        font-size: 16px;
     }
-
 
     .banner-search {
         margin-left: 10px;
@@ -690,56 +662,47 @@
         gap: 6px;
     }
 
-
     .banner-search input {
         width: 120px;
 
-        height: 42px;
+        height: 45px;
     }
 
-
     .banner-search button {
-        height: 42px;
+        height: 45px;
 
         padding: 0 12px;
 
-        font-size: 13px;
+        font-size: 14px;
     }
 
-
     .primary-content {
-        min-height: 480px;
+        min-height: 500px;
 
         padding: 60px 40px;
     }
-
 
     .primary-content h1 {
         font-size: 48px;
     }
 
-
     .primary-content p {
         font-size: 18px;
     }
 
-
     .secondary-content {
-        min-height: 480px;
+        min-height: 500px;
 
         padding: 60px 40px;
     }
-
 
     .secondary-text h1 {
         font-size: 38px;
     }
 
-
     .secondary-image img {
         height: 300px;
     }
-
 }
 
 
@@ -756,9 +719,8 @@
 
         gap: 18px;
 
-        padding: 22px 20px;
+        padding: 20px;
     }
-
 
     .banner-logo {
         width: auto;
@@ -766,13 +728,10 @@
         justify-content: center;
     }
 
-
     .banner-logo img {
-        width: 150px;
-
-        height: 70px;
+        width: 90px;
+        height: 90px;
     }
-
 
     .banner-navbar {
         width: 100%;
@@ -783,16 +742,14 @@
 
         justify-content: center;
 
-        gap: 10px 20px;
+        gap: 10px 22px;
 
         margin: 0;
     }
 
-
     .banner-navbar a {
-        font-size: 15px;
+        font-size: 16px;
     }
-
 
     .banner-search {
         width: 100%;
@@ -802,7 +759,6 @@
         margin: 0;
     }
 
-
     .banner-search input {
         width: 65%;
 
@@ -811,30 +767,29 @@
         height: 45px;
     }
 
-
     .banner-search button {
         height: 45px;
 
         padding: 0 15px;
     }
 
-
     .primary-content {
-        min-height: 430px;
+        min-height: 450px;
 
         padding: 60px 25px;
     }
 
-
     .primary-content h1 {
         font-size: 38px;
-    }
 
+        line-height: 1.25;
+    }
 
     .primary-content p {
         font-size: 17px;
-    }
 
+        line-height: 1.7;
+    }
 
     .secondary-content {
         min-height: auto;
@@ -846,7 +801,6 @@
         padding: 60px 25px;
     }
 
-
     .secondary-text {
         width: 100%;
 
@@ -855,21 +809,17 @@
         text-align: center;
     }
 
-
     .secondary-text h1 {
         font-size: 36px;
     }
-
 
     .secondary-text p {
         font-size: 17px;
     }
 
-
     .secondary-image {
         width: 100%;
     }
-
 
     .secondary-image img {
         width: 100%;
@@ -879,40 +829,33 @@
         height: 300px;
     }
 
-
     .tertiary-content {
         min-height: auto;
 
         padding: 60px 20px;
     }
 
-
     .tertiary-content h1 {
         font-size: 36px;
     }
-
 
     .contact-details {
         padding: 25px;
     }
 
-
     .contact-details p {
         font-size: 16px;
     }
 
-
     .contact-details strong {
         min-width: 100px;
     }
-
 
     .banner-footer {
         min-height: 85px;
 
         padding: 25px 20px;
     }
-
 }
 
 
@@ -923,21 +866,17 @@
 @media (max-width: 450px) {
 
     .banner-logo img {
-        width: 140px;
-
-        height: 65px;
+        width: 80px;
+        height: 80px;
     }
-
 
     .banner-navbar {
-        gap: 8px 14px;
+        gap: 8px 15px;
     }
-
 
     .banner-navbar a {
-        font-size: 13px;
+        font-size: 14px;
     }
-
 
     .banner-search input {
         width: 60%;
@@ -945,48 +884,41 @@
         font-size: 13px;
     }
 
-
     .banner-search button {
         font-size: 13px;
 
         padding: 0 12px;
     }
 
-
     .primary-content h1 {
         font-size: 32px;
     }
-
 
     .primary-content p {
         font-size: 16px;
     }
 
-
     .secondary-text h1 {
         font-size: 31px;
     }
-
 
     .secondary-image img {
         height: 240px;
     }
 
-
     .tertiary-content h1 {
         font-size: 31px;
     }
 
-
     .contact-details p {
         font-size: 14px;
     }
-
 
     .contact-details strong {
         display: block;
 
         margin-bottom: 5px;
     }
-
 }
+
+
