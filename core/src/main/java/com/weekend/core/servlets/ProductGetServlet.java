@@ -32,27 +32,30 @@ import java.io.IOException;
 
 public class ProductGetServlet extends SlingSafeMethodsServlet {
 
+    private static final long serialVersionUID = 1L;
+
     private static final Logger log =
             LoggerFactory.getLogger(ProductGetServlet.class);
 
     @Override
-    protected void doGet(SlingHttpServletRequest request,
-                         SlingHttpServletResponse response)
+    protected void doGet(
+            SlingHttpServletRequest request,
+            SlingHttpServletResponse response)
             throws ServletException, IOException {
 
-        log.info(" Product GET Servlet Started");
+        log.info("Product GET Servlet Started");
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
         try {
 
-            // Current resource
+            // Get current resource
             Resource resource = request.getResource();
 
             log.info("Resource Path: {}", resource.getPath());
 
-            // Read properties
+            // Get properties of current resource
             ValueMap properties = resource.getValueMap();
 
             String productName =
@@ -64,13 +67,34 @@ public class ProductGetServlet extends SlingSafeMethodsServlet {
             String description =
                     properties.get("description", "");
 
-            log.info(" Product Name: {}", productName);
+            log.info("Product Name: {}", productName);
+            log.info("Price: {}", price);
+            log.info("Description: {}", description);
 
-            log.info(" Price: {}", price);
 
-            log.info(" Description: {}", description);
+            // Read query parameter
+            String fields = request.getParameter("fields");
 
-            // JSON Response
+            log.info("Requested fields: {}", fields);
+
+
+            // If query parameter asks for productName and price
+            if ("productName,price".equals(fields)) {
+
+                String jsonResponse = "{"
+                        + "\"productName\":\"" + productName + "\","
+                        + "\"price\":\"" + price + "\""
+                        + "}";
+
+                response.getWriter().write(jsonResponse);
+
+                log.info("Returned productName and price only");
+
+                return;
+            }
+
+
+            // Default response - return all fields
             String jsonResponse = "{"
                     + "\"productName\":\"" + productName + "\","
                     + "\"price\":\"" + price + "\","
@@ -79,11 +103,11 @@ public class ProductGetServlet extends SlingSafeMethodsServlet {
 
             response.getWriter().write(jsonResponse);
 
-            log.info("Product Data Sent Successfully");
+            log.info("All product data sent successfully");
 
         } catch (Exception e) {
 
-            log.error(" Exception in Product GET Servlet", e);
+            log.error("Exception in Product GET Servlet", e);
 
             response.setStatus(
                     SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR

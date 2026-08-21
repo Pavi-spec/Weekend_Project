@@ -1,0 +1,65 @@
+<div>
+
+
+
+    <h1>${properties.campaignTitle}</h1>
+
+    <h2>${properties.campaignName}</h2>
+
+    <p>${properties.campaignDescription}</p>
+
+    <div>
+        ${properties.campaignContent @ context='html'}
+    </div>
+
+
+
+
+    <img src="${properties.bannerImage}"
+         alt="${properties.campaignTitle}"/>
+
+
+
+
+    <p>Banner Size: ${properties.bannerSize}</p>
+
+    <p>Banner Style: ${properties.bannerStyle}</p>
+
+    <p>Banner Priority: ${properties.bannerPriority}</p>
+
+
+
+    <p>
+        Start Date:
+        ${'dd-MM-yyyy' @ format=properties.startDate}
+    </p>
+
+    <p>
+        End Date:
+        ${'dd-MM-yyyy' @ format=properties.endDate}
+    </p>
+
+
+
+
+    <a
+            data-sly-test="${properties.enableCta}"
+            href="${properties.ctaLink}.html">
+
+        ${properties.ctaText}
+
+    </a>
+
+
+    <p>Campaign Page:</p>
+
+    <a href="${properties.campaignPage}.html">
+        View Campaign
+    </a>
+
+
+
+
+    <p>${properties.additionalSettings}</p>
+
+</div>
